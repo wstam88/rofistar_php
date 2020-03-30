@@ -2,17 +2,6 @@
 
 include_once __DIR__ . '/Rofi.php';
 
-/**
- * Filter . and ..
- *
- * @param [type] $item
- * @return void
- */
-function filter_files($item)
-{
-    return $item != '.' && $item != '..';
-}
-
 
 /**
  * Prompt 
@@ -24,12 +13,9 @@ function filter_files($item)
 function getDirContents($dir, &$results = array())
 {
     $files = scandir($dir);
-    $files = array_filter($files, 'filter_files');
 
     foreach($files as $index=>$value) {
-
         $path = realpath($dir . DIRECTORY_SEPARATOR . $value);
-        echo $value;
 
         if(is_dir($path)) {
             $files[$index] = "📁 $value";
@@ -51,10 +37,8 @@ function getDirContents($dir, &$results = array())
         $content = file_get_contents($path);
         $options->copyPaste($content);
         die();
-    } elseif ($value != '.' && $value != '..') {
-        getDirContents($path, $results);
     } else {
-        die();
+        getDirContents($path, $results);
     }
 }
 
