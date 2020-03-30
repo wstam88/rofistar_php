@@ -1,0 +1,1 @@
+await fs.outputFile(f, 'hello!')

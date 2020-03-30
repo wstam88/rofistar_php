@@ -1,0 +1,4 @@
+<span lang='name' foreground='lime'>Fake->name</span> name
+<span lang='text\x_reverse' foreground='#ea4c89'>Reverse selection</span> text\x_reverse
+<span lang='text\x_trim' foreground='#ea4c89'>Trim selection</span> text\x_trim
+<span lang='text\x_crypt' foreground='#ea4c89'>Encrypt selection</span> text\x_crypt
